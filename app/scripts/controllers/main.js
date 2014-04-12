@@ -39,15 +39,18 @@ angular.module('trianglePlayAppApp')
           }
         }
 
-        convertDataURLToImageData(
-          pattern.dataUri,
-          function(canvas){
+      convertDataURLToImageData(
+        pattern.dataUri,
+        function(canvas){
+          try {
             var image = canvas.toDataURL("image/png");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
-            console.log(image.length);
             var previewImage = document.getElementById('preview');
             previewImage.src = image;
+          } catch(e) {
+            var svgPreview = document.getElementById('svgPreview');
+            svgPreview.setAttribute('style', 'width: 100%; height: ' + height +'px; ' + 'background-image: '+pattern.dataUrl);
           }
-        );
+        });
     };
     $scope.drawTrianglify($scope.trianglify);
   });
