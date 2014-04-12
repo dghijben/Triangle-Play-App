@@ -1,9 +1,16 @@
 <div class="row">
+  <h1>Desktop Pattern Generator</h1>
   <img id="preview" />
   <div id="svgPreview"></div>
+  <button ng-click="downloadCurrent()">Download</button>
   <label>
-    Color Palette
+    Color Palette X Gradient
     <select ng-model="trianglify.palette" ng-options="color for color in colorOptions" ng-change="drawTrianglify(trianglify)"></select>
+  </label>
+
+  <label>
+    Color Palette Y Gradient
+    <select ng-model="trianglify.palette_2" ng-options="color for color in colorOptions" ng-change="drawTrianglify(trianglify)"></select>
   </label>
 
   <label>
