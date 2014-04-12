@@ -1,36 +1,30 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">triangle play app</h3>
-</div>
+<div class="row" ng-controller="MainCtrl">
+  <div class="col-sm-3" id="controls">
+    <label>
+      Cell Size
+      <input type="range" min="30" max="150" ng-model="trianglify.cellsize" ng-change="drawTrianglify(trianglify)">
+    </label>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+    <label>
+      Bleed
+      <input type="range" min="1" max="150" ng-model="trianglify.bleed" ng-change="drawTrianglify(trianglify)">
+    </label>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+    <label>
+      Cell Padding
+      <input type="range" min="1" max="15" ng-model="trianglify.cellpadding" ng-change="drawTrianglify(trianglify)">
+    </label>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+    <label>
+      Noise Intensity
+      <input type="range" min="0" max="1" step="0.1" ng-model="trianglify.noiseIntensity" ng-change="drawTrianglify(trianglify)">
+    </label>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
-
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
+    <label>
+      Color Palette
+      <select ng-model="trianglify.palette" ng-options="color for color in colorOptions" ng-change="drawTrianglify(trianglify)"/>
+  </div>
+  <div class="col-sm-9" id="preview-stage">
+    <img id="preview" />
+  </div>
 </div>
