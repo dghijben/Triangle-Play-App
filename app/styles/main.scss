@@ -1,7 +1,3 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-
-@import 'sass-bootstrap/lib/bootstrap';
-
 html,body,.full-width-fluid-container
 {
     height:100%;
@@ -12,37 +8,35 @@ input, select {
 }
 
 label{
+  width: 100%;
   margin-top: 10px;
+  text-align: left;
+  max-width: 600px;
+}
+
+body{
+  display:table;
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
 }
 
 .full-width-fluid-container {
-  display:table;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  display: table-row;
+  text-align: center;
 }
 
 .row{
   height: 100%;
-  display: table-row;
-}
-
-#controls, #preview-stage
-{
-    display: table-cell;
-    float: none;
-}
-
-#controls {
-  background: rgb(253, 239, 187);
-  vertical-align: middle;
-  position: relative;
-  left: -1px;
-}
-
-#preview-stage {
-  vertical-align: middle;
-  text-align: center;
+  background: #ECEBE4;
+  display: table-cell;
+  float: none;
+  padding: 0 12px;
 }

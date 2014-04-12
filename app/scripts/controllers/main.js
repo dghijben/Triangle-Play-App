@@ -2,6 +2,7 @@
 
 angular.module('trianglePlayAppApp')
   .controller('MainCtrl', function ($scope) {
+    $scope.colorOptions = Object.keys(colorbrewer);
     $scope.trianglify = {
       cellsize: 150,
       bleed: 100,
@@ -9,7 +10,6 @@ angular.module('trianglePlayAppApp')
       noiseIntensity: 0,
       palette: 'PuOr'
     };
-    $scope.colorOptions = Object.keys(colorbrewer);
     $scope.drawTrianglify = function(options){
       var width = 600;
       var height = 400;
